@@ -14,14 +14,6 @@ public interface ApiInterface {
     @GET("/api/about/get")
     Call<List<AboutModel>> getAboutData();
 
-    // Тезисы раздела "Почему я?".
-    @GET("/api/theses/get")
-    Call<List<ThesesModel>> getThesesData();
-
-    // Видео раздела "Почему я?".
-    @GET("/api/video/get")
-    Call<List<VideoModel>> getVideoData();
-
     // Образование.
     @GET("/api/education/get")
     Call<List<EducationModel>> getEducationData();

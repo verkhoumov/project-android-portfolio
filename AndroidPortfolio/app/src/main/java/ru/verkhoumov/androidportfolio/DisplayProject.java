@@ -9,11 +9,9 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.io.InputStream;
@@ -25,12 +23,13 @@ public class DisplayProject extends AppCompatActivity {
         setContentView(R.layout.project_info);
         setTitle("Информация о проекте");
 
+        // Показываем кнопку "Назад".
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
 
-        // Получаем содержимое поля из объекта Intent.
         Intent intent = getIntent();
 
+        // Получаем данные из объекта Intent.
         String name = intent.getStringExtra("NAME");
         String image = intent.getStringExtra("IMAGE");
         String description = intent.getStringExtra("DESCRIPTION");
@@ -44,10 +43,12 @@ public class DisplayProject extends AppCompatActivity {
         TextView projectFinished = (TextView) findViewById(R.id.projectInfoFinished);
         TextView projectDescription = (TextView) findViewById(R.id.projectInfoDescription);
         TextView projectText = (TextView) findViewById(R.id.projectInfoText);
-
         ImageView projectImage = (ImageView) findViewById(R.id.projectInfoImage);
+
+        // Загружаем картинку.
         new DownloadImageTask(projectImage).execute(image);
 
+        // Подставляем контент.
         projectName.setText(name);
         projectStarted.setText(started);
 
@@ -81,7 +82,7 @@ public class DisplayProject extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    //
+    // Загрузчик изображений.
     private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
         ImageView bmImage;
 

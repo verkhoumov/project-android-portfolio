@@ -26,6 +26,7 @@ public class EducationFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_education, container, false);
 
+        // Данный фрагмент выводит 2 сущности, поэтому строим 2 разных списка.
         educations = new ArrayList<>();
         skills = new ArrayList<>();
 

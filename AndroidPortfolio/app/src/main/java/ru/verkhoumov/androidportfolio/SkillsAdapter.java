@@ -66,7 +66,7 @@ public class SkillsAdapter extends RecyclerView.Adapter<SkillsAdapter.ViewHolder
         }
     }
 
-    //
+    // Загрузчик изображений.
     private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
         ImageView bmImage;
 

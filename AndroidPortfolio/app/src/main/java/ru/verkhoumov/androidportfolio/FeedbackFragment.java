@@ -4,7 +4,6 @@ package ru.verkhoumov.androidportfolio;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,18 +25,19 @@ public class FeedbackFragment extends Fragment {
         final EditText email = (EditText) view.findViewById(R.id.feedbackFormEmail);
         final EditText message = (EditText) view.findViewById(R.id.feedbackFormMessage);
 
+        // При нажатии на кнопку отправляем сообщение.
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //
+                // Данные из формы.
                 String _name = name.getText().toString();
                 String _email = email.getText().toString();
                 String _message = message.getText().toString();
 
-                //
+                // Валидация.
                 String errors = getFormErrors(_name, _email, _message);
 
-                //
+                // Если ошибок нет, отправляем сообщение.
                 if (errors.length() == 0) {
                     Intent emailIntent = new Intent(Intent.ACTION_SEND);
 
@@ -58,6 +58,7 @@ public class FeedbackFragment extends Fragment {
         return view;
     }
 
+    // Проверка ошибок формы.
     public String getFormErrors(String name, String email, String message) {
         String errors = "";
 

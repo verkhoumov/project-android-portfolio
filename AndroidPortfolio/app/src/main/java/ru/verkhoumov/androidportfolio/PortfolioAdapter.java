@@ -55,6 +55,7 @@ public class PortfolioAdapter extends RecyclerView.Adapter<PortfolioAdapter.View
             public void onClick(View v) {
                 // Создание объекта Intent для вызова новой Activity.
                 Intent intent = new Intent(mContext, DisplayProject.class);
+
                 // Добавляем ключ -> значение.
                 intent.putExtra("NAME", post.getName());
                 intent.putExtra("IMAGE", post.getImage());
@@ -62,6 +63,7 @@ public class PortfolioAdapter extends RecyclerView.Adapter<PortfolioAdapter.View
                 intent.putExtra("STARTED", post.getCreated());
                 intent.putExtra("FINISHED", post.getFinished());
                 intent.putExtra("TEXT", post.getText());
+
                 // Запуск новой Activity.
                 mContext.startActivity(intent);
             }
@@ -97,6 +99,7 @@ public class PortfolioAdapter extends RecyclerView.Adapter<PortfolioAdapter.View
         }
     }
 
+    // Загрузчик изображений.
     private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
         ImageView bmImage;
 
