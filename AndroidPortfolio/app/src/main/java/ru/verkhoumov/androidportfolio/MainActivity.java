@@ -1,6 +1,8 @@
 package ru.verkhoumov.androidportfolio;
 
 import android.os.Bundle;
+import android.support.design.internal.NavigationMenu;
+import android.support.design.internal.NavigationMenuItemView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.design.widget.NavigationView;
@@ -31,6 +33,29 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        // Активируем пункт меню "Профиль".
+        MenuItem menuItemView = navigationView.getMenu().findItem(R.id.navMain);
+        menuItemView.setChecked(true);
+
+        // Вызываем соответствующий фрагмент.
+        Class fragmentClass = MainFragment.class;
+        Fragment fragment = null;
+
+        try {
+            fragment = (Fragment) fragmentClass.newInstance();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        // Вставка фрагмента с заменой текущего.
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
+
+        // Установка заголовка.
+        setTitle(menuItemView.getTitle());
+
+        drawer.closeDrawer(GravityCompat.START);
     }
 
     @Override
@@ -53,11 +78,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-
-        if (id == R.id.action_settings) {
-            return true;
-        }
+        // int id = item.getItemId();
 
         return super.onOptionsItemSelected(item);
     }

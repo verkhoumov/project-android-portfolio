@@ -103,6 +103,7 @@ public class DisplayProject extends AppCompatActivity {
         }
 
         protected void onPostExecute(Bitmap result) {
+            result = ImageHelper.getRoundedCornerBitmap(result, 6);
             bmImage.setImageBitmap(result);
         }
     }

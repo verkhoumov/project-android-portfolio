@@ -20,7 +20,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="Образование"
-                android:textColor="#e6f3ff"
+                android:textColor="#f8f6ff"
                 android:textStyle="bold"
                 android:textSize="24dp" />
 
@@ -36,7 +36,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="Навыки"
-                android:textColor="#e6f3ff"
+                android:textColor="#f8f6ff"
                 android:textStyle="bold"
                 android:textSize="24dp"
                 android:paddingTop="30dp" />

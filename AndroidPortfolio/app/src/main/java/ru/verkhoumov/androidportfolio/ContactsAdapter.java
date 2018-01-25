@@ -1,19 +1,14 @@
 package ru.verkhoumov.androidportfolio;
 
 import android.content.Context;
-import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.os.AsyncTask;
+import android.graphics.drawable.Drawable;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.io.InputStream;
 import java.util.List;
 
 public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.ViewHolder> {
@@ -40,8 +35,34 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.ViewHo
     public void onBindViewHolder(ViewHolder holder, int position) {
         final ContactsModel post = contacts.get(position);
 
-        // holder.image.setText(post.getCategoryName());
-        holder.name.setText(post.getName());
+        String type = post.getType();
+        String name = post.getName();
+        String link = post.getLink();
+        String code = post.getCode();
+
+        if (type.equals("social")) {
+            // Удаляем из ссылки https?.
+            link = link.replace("https://", "");
+            link = link.replace("http://", "");
+
+            holder.name.setText(link);
+        } else {
+            holder.name.setText(name);
+        }
+
+        // Заменяем тире на нижнее подчёркивание.
+        code = code.replace("-", "_");
+
+        // Установка иконки в зависимости от контакта.
+        int drawableId = mContext.getResources().getIdentifier(code, "drawable", mContext.getPackageName());
+
+        if (drawableId > 0) {
+            Drawable drawable = mContext.getResources().getDrawable(drawableId);
+
+            if (drawable != null) {
+                holder.image.setImageDrawable(drawable);
+            }
+        }
     }
 
     @Override

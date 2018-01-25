@@ -53,7 +53,7 @@
             android:layout_height="100dp"
             android:scaleType="fitCenter"
             android:padding="2dp"
-            android:background="#4f3d85" />
+            android:background="@drawable/photo2" />
         <TextView
             android:id="@+id/portfolioItemName"
             android:layout_width="match_parent"

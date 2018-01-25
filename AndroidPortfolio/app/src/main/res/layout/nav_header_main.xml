@@ -10,29 +10,25 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
-
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/menuImage"
         android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:src="@drawable/avatar" />
-
+        android:layout_height="60dp" />
     <TextView
+        android:id="@+id/menuName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="15dp"
         android:textSize="18dp"
         android:textColor="#f8f6ff"
-        android:text="Дмитрий Верхоумов"
+        android:text="Автор"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
-
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/menuSpecialization"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="italic"
         android:textColor="#7e71a5"
         android:paddingTop="7dp"
-        android:text="Full Stack веб-разработчик" />
-
+        android:text="Профессия" />
 </LinearLayout>

@@ -11,7 +11,7 @@
     <string name="navContactsAndFeedback">Контакты</string>
     <string name="navContacts">Контактная информация</string>
     <string name="navFeedback">Обратная связь</string>
-    <string name="navMain">В начало</string>
+    <string name="navMain">Профиль</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

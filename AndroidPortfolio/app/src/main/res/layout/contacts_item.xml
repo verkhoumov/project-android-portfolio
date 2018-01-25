@@ -8,17 +8,19 @@
     android:paddingStart="20dp"
     android:paddingEnd="20dp"
     android:paddingBottom="20dp">
+
     <ImageView
         android:id="@+id/contactsItemImage"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:background="#fff" />
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:scaleType="fitCenter" />
+
     <TextView
         android:id="@+id/contactsItemName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Начало"
+        android:text="Контакт"
         android:textColor="#c4b8e4"
-        android:textSize="22dp"
+        android:textSize="20dp"
         android:layout_marginStart="25dp" />
 </LinearLayout>

@@ -2,8 +2,10 @@ package ru.verkhoumov.androidportfolio;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.media.Image;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -40,6 +42,14 @@ public class MainFragment extends Fragment {
         final TextView projects = (TextView) view.findViewById(R.id.profileProjects);
         final ImageView image = (ImageView) view.findViewById(R.id.profileImage);
 
+        // Доступ к шапке меню.
+        NavigationView navigationView = (NavigationView) getActivity().findViewById(R.id.nav_view);
+        View headerView = navigationView.getHeaderView(0);
+
+        final TextView menuUsername = (TextView) headerView.findViewById(R.id.menuName);
+        final TextView menuProfession = (TextView) headerView.findViewById(R.id.menuSpecialization);
+        final ImageView menuImage = (ImageView) headerView.findViewById(R.id.menuImage);
+
         App app = new App();
         app.getApi().getProfileData().enqueue(new Callback<ProfileModel>() {
             @Override
@@ -53,7 +63,13 @@ public class MainFragment extends Fragment {
                 experience.setText(profile.getExperience());
                 projects.setText(profile.getProjects());
 
-                new DownloadImageTask(image).execute(profile.getImage());
+                new DownloadImageTask(image, 6).execute(profile.getImage());
+
+                // Меняем информацию о пользователе в меню.
+                menuUsername.setText(profile.getName());
+                menuProfession.setText(profile.getProfession());
+
+                new DownloadImageTask(menuImage, 10).execute(profile.getImage());
             }
 
             @Override
@@ -71,9 +87,11 @@ public class MainFragment extends Fragment {
 
     private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
         ImageView bmImage;
+        int radius = 10;
 
-        public DownloadImageTask(ImageView bmImage) {
+        public DownloadImageTask(ImageView bmImage, int radius) {
             this.bmImage = bmImage;
+            this.radius = radius;
         }
 
         protected Bitmap doInBackground(String... urls) {
@@ -90,6 +108,7 @@ public class MainFragment extends Fragment {
         }
 
         protected void onPostExecute(Bitmap result) {
+            result = ImageHelper.getRoundedCornerBitmap(result, radius);
             bmImage.setImageBitmap(result);
         }
     }

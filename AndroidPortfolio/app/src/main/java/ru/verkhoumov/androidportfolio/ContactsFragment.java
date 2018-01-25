@@ -35,6 +35,8 @@ public class ContactsFragment extends Fragment {
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(layoutManager);
 
+        recyclerView.setNestedScrollingEnabled(false);
+
         App app = new App();
         app.getApi().getContactsData().enqueue(new Callback<List<ContactsModel>>() {
             @Override

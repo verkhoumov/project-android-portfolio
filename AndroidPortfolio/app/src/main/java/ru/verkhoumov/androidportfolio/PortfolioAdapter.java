@@ -118,6 +118,7 @@ public class PortfolioAdapter extends RecyclerView.Adapter<PortfolioAdapter.View
         }
 
         protected void onPostExecute(Bitmap result) {
+            result = ImageHelper.getRoundedCornerBitmap(result, 6);
             bmImage.setImageBitmap(result);
         }
     }
