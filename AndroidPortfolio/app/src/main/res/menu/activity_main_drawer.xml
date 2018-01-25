@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/navMain"
+            android:checked="true"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/navMain" />
+        <item
+            android:id="@+id/navAbout"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/navAbout" />
+        <item
+            android:id="@+id/navEducation"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="@string/navEducation" />
+        <item
+            android:id="@+id/navPortfolio"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/navPortfolio" />
+    </group>
+
+    <item android:title="@string/navContactsAndFeedback">
+        <menu>
+            <item
+                android:id="@+id/navContacts"
+                android:icon="@drawable/ic_menu_share"
+                android:title="@string/navContacts" />
+            <item
+                android:id="@+id/navFeedback"
+                android:icon="@drawable/ic_menu_send"
+                android:title="@string/navFeedback" />
+        </menu>
+    </item>
+</menu>

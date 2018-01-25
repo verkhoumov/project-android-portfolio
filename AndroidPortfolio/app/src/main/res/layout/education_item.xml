@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="top"
+    android:orientation="vertical"
+    android:paddingBottom="40dp">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/educationItemPeriodStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Начало"
+            android:textColor="#7e70a5"
+            android:textSize="18dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" — "
+            android:textColor="#7e70a5"
+            android:textSize="18dp" />
+        <TextView
+            android:id="@+id/educationItemPeriodEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Конец"
+            android:textColor="#7e70a5"
+            android:textSize="18dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:gravity="top">
+        <ImageView
+            android:id="@+id/educationItemImage"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="fitCenter"
+            android:padding="10dp"
+            android:background="#fff" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="top"
+            android:layout_marginLeft="20dp">
+            <TextView
+                android:id="@+id/educationItemName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ВУЗ"
+                android:textColor="#f8f6ff"
+                android:textStyle="bold"
+                android:textSize="22dp" />
+            <TextView
+                android:id="@+id/educationItemFaculty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Кафедра"
+                android:lineSpacingExtra="5dp"
+                android:textColor="#c4b8e4"
+                android:textSize="18dp"
+                android:layout_marginTop="9dp" />
+            <TextView
+                android:id="@+id/educationItemCity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Город"
+                android:textColor="#7e70a5"
+                android:textSize="18dp"
+                android:layout_marginTop="9dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Специализация:"
+                android:textColor="#f8f6ff"
+                android:textStyle="bold"
+                android:textSize="22dp"
+                android:layout_marginTop="25dp"/>
+            <TextView
+                android:id="@+id/educationItemSpecialization"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Направление"
+                android:textColor="#c4b8e4"
+                android:textSize="18dp"
+                android:layout_marginTop="9dp" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

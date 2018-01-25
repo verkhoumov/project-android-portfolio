@@ -1,0 +1,94 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context="ru.verkhoumov.androidportfolio.FeedbackFragment"
+    android:background="#33275e">
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="vertical"
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="20dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Как Вас зовут?"
+                android:textColor="#f8f6ff"
+                android:textSize="24dp"
+                android:textStyle="bold" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:hint="Иван Петров"
+                android:textColorHint="#443e8c"
+                android:ems="10"
+                android:id="@+id/feedbackFormName"
+                android:padding="20dp"
+                android:background="#3d2e6f"
+                android:textColor="#f8f6ff"
+                android:layout_marginTop="20dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Куда отправить ответ?"
+                android:textColor="#f8f6ff"
+                android:textSize="24dp"
+                android:textStyle="bold"
+                android:layout_marginTop="35dp" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:hint="ivan.petrov@yandex.ru"
+                android:textColorHint="#443e8c"
+                android:ems="10"
+                android:id="@+id/feedbackFormEmail"
+                android:padding="20dp"
+                android:background="#3d2e6f"
+                android:textColor="#f8f6ff"
+                android:layout_marginTop="20dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Текст сообщения"
+                android:textColor="#f8f6ff"
+                android:textSize="24dp"
+                android:textStyle="bold"
+                android:layout_marginTop="35dp" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minLines="8"
+                android:inputType="textMultiLine"
+                android:hint="Привет! Хочу заказать разработку интернет-магазина, сколько это будет стоить?"
+                android:textColorHint="#443e8c"
+                android:ems="10"
+                android:id="@+id/feedbackFormMessage"
+                android:padding="20dp"
+                android:background="#3d2e6f"
+                android:textColor="#f8f6ff"
+                android:lineSpacingExtra="8dp"
+                android:layout_marginTop="20dp"
+                android:nestedScrollingEnabled="false"
+                android:gravity="start|top" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Отправить"
+                android:textColor="#f5f7fe"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:padding="20dp"
+                android:id="@+id/button"
+                android:background="#2158f4"
+                android:layout_marginTop="35dp"
+                android:layout_gravity="end" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
